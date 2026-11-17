@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>小树苗资料库 · 小学教辅资料下载</title>
+  <meta name="description" content="精选小学1-6年级语文、数学、英语、科学教辅资料，免费下载，助力孩子学习。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===== 顶部导航 ===== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-inner">
+      <a href="#home" class="brand">
+        <span class="brand-mark">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 21c0-6 3-10 8-12-1 6-4 9-8 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 21c0-5-2-8-6-10 1 5 3 8 6 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 21v-5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </span>
+        <span class="brand-name">小树苗<span>资料库</span></span>
+      </a>
+      <nav class="nav-menu" id="navMenu">
+        <a href="#home" class="nav-link active">首页</a>
+        <a href="#library" class="nav-link">资料库</a>
+        <a href="#about" class="nav-link">关于我们</a>
+        <a href="#contact" class="nav-link">联系我们</a>
+      </nav>
+      <div class="nav-actions">
+        <div class="search-box">
+          <svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M20 20l-3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <input type="text" id="searchInput" placeholder="搜索资料名称…" />
+        </div>
+        <button class="menu-toggle" id="menuToggle" aria-label="打开菜单"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section class="hero" id="home">
+    <div class="hero-blob blob-1"></div>
+    <div class="hero-blob blob-2"></div>
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <span class="hero-badge">📚 精选小学教辅 · 持续更新</span>
+        <h1>让优质资料，<br />陪伴孩子<span class="hl">每一步成长</span></h1>
+        <p>覆盖小学 1–6 年级，语文、数学、英语、科学全科目教辅资料。<br />分类清晰、一键下载，家长和老师都在用的学习好帮手。</p>
+        <div class="hero-buttons">
+          <a href="#library" class="btn btn-primary">立即查找资料 <span>→</span></a>
+          <a href="#about" class="btn btn-ghost">了解我们</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>500<span>+</span></strong><small>份精选资料</small></div>
+          <div><strong>6<span>个</span></strong><small>覆盖年级</small></div>
+          <div><strong>1<span>万+</span></strong><small>家长在用</small></div>
+        </div>
+      </div>
+      <div class="hero-art">
+        <div class="art-card card-a">
+          <div class="art-icon" style="background:#fff0e8;color:#f08a5d">语</div>
+          <div class="art-lines"><i></i><i></i></div>
+        </div>
+        <div class="art-card card-b">
+          <div class="art-icon" style="background:#e8f2ff;color:#5b8def">数</div>
+          <div class="art-lines"><i></i><i></i></div>
+        </div>
+        <div class="art-card card-c">
+          <div class="art-icon" style="background:#e6f7ef;color:#3fae7f">英</div>
+          <div class="art-lines"><i></i><i></i></div>
+        </div>
+        <div class="art-bubble">学习<br />加油站 ⭐</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 资料库 ===== -->
+  <section class="section library" id="library">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="section-kicker">资料库 / LIBRARY</span>
+          <h2>按年级和科目，快速找到需要的资料</h2>
+        </div>
+        <p class="section-desc">共 <strong id="resultCount">12</strong> 份资料</p>
+      </div>
+
+      <!-- 筛选栏 -->
+      <div class="filters">
+        <div class="filter-row">
+          <span class="filter-label">年级</span>
+          <div class="filter-chips" id="gradeFilters">
+            <button class="chip active" data-grade="all">全部</button>
+            <button class="chip" data-grade="1">一年级</button>
+            <button class="chip" data-grade="2">二年级</button>
+            <button class="chip" data-grade="3">三年级</button>
+            <button class="chip" data-grade="4">四年级</button>
+            <button class="chip" data-grade="5">五年级</button>
+            <button class="chip" data-grade="6">六年级</button>
+          </div>
+        </div>
+        <div class="filter-row">
+          <span class="filter-label">科目</span>
+          <div class="filter-chips" id="subjectFilters">
+            <button class="chip active" data-subject="all">全部</button>
+            <button class="chip" data-subject="语文">语文</button>
+            <button class="chip" data-subject="数学">数学</button>
+            <button class="chip" data-subject="英语">英语</button>
+            <button class="chip" data-subject="科学">科学</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 资料卡片网格 -->
+      <div class="materials-grid" id="materialsGrid">
+
+        <article class="material-card reveal" data-grade="1" data-subject="语文" data-keywords="看图写话 一年级 语文 作文">
+          <div class="card-cover" style="background-color:#fdeee6">
+            <img src="cover-chinese.png" alt="看图写话封面" />
+            <span class="cover-tag tag-chinese">语文</span>
+            <div class="cover-title"><b>看图写话</b><span>专项训练 · 一年级</span></div>
+          </div>
+          <div class="card-body">
+            <h3>一年级看图写话专项训练（全册）</h3>
+            <p>从一句话到一段话，循序渐进，配精美插图与范文，帮孩子轻松起步写话。</p>
+            <div class="card-meta"><span>📄 48页</span><span>📦 PDF</span><span>⭐ 4.9</span></div>
+            <div class="card-foot"><span class="grade-pill">一年级 · 上册</span><button class="download-btn" data-title="一年级看图写话专项训练">下载资料 ↓</button></div>
+          </div>
+        </article>
+
+        <article class="material-card reveal" data-grade="2" data-subject="数学" data-keywords="口算 二年级 数学 加减法">
+          <div class="card-cover" style="background-color:#e8f2ff">
+            <img src="cover-math.png" alt="数学口算封面" />
+            <span class="cover-tag tag-math">数学</span>
+            <div class="cover-title"><b>口算天天练</b><span>100以内加减法 · 二年级</span></div>
+          </div>
+          <div class="card-body">
+            <h3>二年级100以内加减法口算题卡</h3>
+            <p>每日一练，共3000道题，含进位加、退位减，附答案，快速提升计算速度与准确率。</p>
+            <div class="card-meta"><span>📄 60页</span><span>📦 PDF</span><span>⭐ 4.8</span></div>
+            <div class="card-foot"><span class="grade-pill">二年级 · 全册</span><button class="download-btn" data-title="二年级100以内加减法口算题卡">下载资料 ↓</button></div>
+          </div>
+        </article>
+
+        <article class="material-card reveal" data-grade="3" data-subject="英语" data-keywords="单词 三年级 英语 词汇 起点">
+          <div class="card-cover" style="background-color:#e6f7ef">
+            <img src="cover-english.png" alt="英语单词封面" />
+            <span class="cover-tag tag-english">英语</span>
+            <div class="cover-title"><b>英语单词卡</b><span>高频词汇 · 三年级</span></div>
+          </div>
+          <div class="card-body">
+            <h3>三年级英语高频词汇图文卡片</h3>
+            <p>配图记忆，覆盖课标核心词汇500个，可打印裁剪，随身携带随时背。</p>
+            <div class="card-meta"><span>📄 36页</span><span>📦 PDF</span><span>⭐ 4.9</span></div>
+            <div class="card-foot"><span class="grade-pill">三年级 · 全册</span><button class="download-btn" data-title="三年级英语高频词汇图文卡片">下载资料 ↓</button></div>
+          </div>
+        </article>
+
+        <article class="material-card reveal" data-grade="4" data-subject="语文" data-keywords="阅读理解 四年级 语文">
+          <div class="card-cover" style="background-color:#fdeee6">
+            <img src="cover-chinese.png" alt="阅读理解封面" />
+            <span class="cover-tag tag-chinese">语文</span>
+            <div class="cover-title"><b>阅读理解</b><span>专项突破 · 四年级</span></div>
+          </div>
+          <div class="card-body">
+            <h3>四年级语文阅读理解专项训练100篇</h3>
+            <p>精选各类文体，含记叙文、说明文、童话，附详细答案解析，提升阅读能力。</p>
+            <div class="card-meta"><span>📄 82页</span><span>📦 PDF</span><span>⭐ 4.7</span></div>
+            <div class="card-foot"><span class="grade-pill">四年级 · 全册</span><button class="download-btn" data-title="四年级语文阅读理解专项训练100篇">下载资料 ↓</button></div>
+          </div>
+        </article>
+
+        <article class="material-card reveal" data-grade="5" data-subject="数学" data-keywords="应用题 五年级 数学">
+          <div class="card-cover" style="background-color:#e8f2ff">
+            <img src="cover-math.png" alt="应用题封面" />
+            <span class="cover-tag tag-math">数学</span>
+            <div class="cover-title"><b>应用题精练</b><span>高频题型 · 五年级</span></div>
+          </div>
+          <div class="card-body">
+            <h3>五年级数学应用题专项突破（含答案）</h3>
+            <p>覆盖小数、分数、方程等重点应用题，分类讲解+变式训练，难点逐一攻克。</p>
+            <div class="card-meta"><span>📄 56页</span><span>📦 PDF</span><span>⭐ 4.8</span></div>
+            <div class="card-foot"><span class="grade-pill">五年级 · 全册</span><button class="download-btn" data-title="五年级数学应用题专项突破">下载资料 ↓</button></div>
+          </div>
+        </article>
+
+        <article class="material-card reveal" data-grade="6" data-subject="英语" data-keywords="小升初 六年级 英语 复习">
+          <div class="card-cover" style="background-color:#e6f7ef">
+            <img src="cover-english.png" alt="小升初英语封面" />
+            <span class="cover-tag tag-english">英语</span>
+            <div class="cover-title"><b>小升初英语</b><span>总复习 · 六年级</span></div>
+          </div>
+          <div class="card-body">
+            <h3>六年级英语小升初总复习资料包</h3>
+            <p>系统梳理语法、词汇、句型，含真题模拟卷，助力小升初从容备考。</p>
+            <div class="card-meta"><span>📄 96页</span><span>📦 PDF</span><span>⭐ 4.9</span></div>
+            <div class="card-foot"><span class="grade-pill">六年级 · 下册</span><button class="download-btn" data-title="六年级英语小升初总复习资料包">下载资料 ↓</button></div>
+          </div>
+        </article>
+
+        <article class="material-card reveal" data-grade="3" data-subject="科学" data-keywords="科学 三年级 观察 实验">
+          <div class="card-cover" style="background-color:#efe9fb">
+            <img src="cover-science.png" alt="科学封面" />
+            <span class="cover-tag tag-science">科学</span>
+            <div class="cover-title"><b>趣味科学</b><span>观察与实验 · 三年级</span></div>
+          </div>
+          <div class="card-body">
+            <h3>三年级科学趣味实验与观察记录册</h3>
+            <p>贴近生活的家庭小实验，配观察记录表，培养孩子的科学探究兴趣。</p>
+            <div class="card-meta"><span>📄 42页</span><span>📦 PDF</span><span>⭐ 4.6</span></div>
+            <div class="card-foot"><span class="grade-pill">三年级 · 全册</span><button class="download-btn" data-title="三年级科学趣味实验与观察记录册">下载资料 ↓</button></div>
+          </div>
+        </article>
+
+        <article class="material-card reveal" data-grade="4" data-subject="语文" data-keywords="古诗 四年级 语文 背诵 国学">
+          <div class="card-cover" style="background-color:#fbf0d9">
+            <img src="cover-classic.png" alt="古诗文封面" />
+            <span class="cover-tag tag-chinese">语文</span>
+            <div class="cover-title"><b>古诗词背诵</b><span>国学启蒙 · 四年级</span></div>
+          </div>
+          <div class="card-body">
+            <h3>小学必背古诗词75首（配译文赏析）</h3>
+            <p>涵盖课标必背篇目，注音+译文+赏析+配图，让孩子读懂、背会、会用。</p>
+            <div class="card-meta"><span>📄 78页</span><span>📦 PDF</span><span>⭐ 4.9</span></div>
+            <div class="card-foot"><span class="grade-pill">1–6年级 · 通用</span><button class="download-btn" data-title="小学必背古诗词75首">下载资料 ↓</button></div>
+          </div>
+        </article>
+
+        <article class="material-card reveal" data-grade="1" data-subject="语文" data-keywords="写字 一年级 语文 书法 田字格">
+          <div class="card-cover" style="background-color:#fce9ee">
+            <img src="cover-writing.png" alt="写字封面" />
+            <span class="cover-tag tag-chinese">语文</span>
+            <div class="cover-title"><b>硬笔写字</b><span>规范书写 · 一年级</span></div>
+          </div>
+          <div class="card-body">
+            <h3>一年级硬笔书法写字练习帖（田字格）</h3>
+            <p>从笔画笔顺到生字描红，规范坐姿与握笔，帮孩子写出一手好字。</p>
+            <div class="card-meta"><span>📄 50页</span><span>📦 PDF</span><span>⭐ 4.7</span></div>
+            <div class="card-foot"><span class="grade-pill">一年级 · 全册</span><button class="download-btn" data-title="一年级硬笔书法写字练习帖">下载资料 ↓</button></div>
+          </div>
+        </article>
+
+        <article class="material-card reveal" data-grade="6" data-subject="数学" data-keywords="小升初 六年级 数学 真题 复习">
+          <div class="card-cover" style="background-color:#e8f2ff">
+            <img src="cover-math.png" alt="小升初数学封面" />
+            <span class="cover-tag tag-math">数学</span>
+            <div class="cover-title"><b>小升初数学</b><span>真题汇编 · 六年级</span></div>
+          </div>
+          <div class="card-body">
+            <h3>小升初数学真题试卷汇编（含解析）</h3>
+            <p>汇集各地名校真题，按专题分类，附详细解答，冲刺名校有方向。</p>
+            <div class="card-meta"><span>📄 110页</span><span>📦 PDF</span><span>⭐ 4.8</span></div>
+            <div class="card-foot"><span class="grade-pill">六年级 · 下册</span><button class="download-btn" data-title="小升初数学真题试卷汇编">下载资料 ↓</button></div>
+          </div>
+        </article>
+
+        <article class="material-card reveal" data-grade="2" data-subject="语文" data-keywords="日记 二年级 语文 写话">
+          <div class="card-cover" style="background-color:#fce9ee">
+            <img src="cover-writing.png" alt="日记封面" />
+            <span class="cover-tag tag-chinese">语文</span>
+            <div class="cover-title"><b>写日记</b><span>入门指导 · 二年级</span></div>
+          </div>
+          <div class="card-body">
+            <h3>二年级日记入门写作指导与范例</h3>
+            <p>从观察生活开始，提供日记模板与优秀范例，让写日记不再难。</p>
+            <div class="card-meta"><span>📄 40页</span><span>📦 PDF</span><span>⭐ 4.6</span></div>
+            <div class="card-foot"><span class="grade-pill">二年级 · 全册</span><button class="download-btn" data-title="二年级日记入门写作指导与范例">下载资料 ↓</button></div>
+          </div>
+        </article>
+
+        <article class="material-card reveal" data-grade="5" data-subject="英语" data-keywords="英语 五年级 阅读 短文">
+          <div class="card-cover" style="background-color:#e6f7ef">
+            <img src="cover-english.png" alt="英语阅读封面" />
+            <span class="cover-tag tag-english">英语</span>
+            <div class="cover-title"><b>英语阅读</b><span>短文训练 · 五年级</span></div>
+          </div>
+          <div class="card-body">
+            <h3>五年级英语阅读理解训练100篇</h3>
+            <p>题材丰富、难度递进，生词注释+答案解析，稳步提升英语阅读能力。</p>
+            <div class="card-meta"><span>📄 72页</span><span>📦 PDF</span><span>⭐ 4.7</span></div>
+            <div class="card-foot"><span class="grade-pill">五年级 · 全册</span><button class="download-btn" data-title="五年级英语阅读理解训练100篇">下载资料 ↓</button></div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- 无结果提示 -->
+      <div class="no-result" id="noResult" style="display:none">
+        <div class="no-result-icon">🔍</div>
+        <h3>没有找到相关资料</h3>
+        <p>试试更换关键词，或选择其他年级和科目</p>
+        <button class="btn btn-outline" id="resetBtn">重置筛选</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 关于我们 ===== -->
+  <section class="section about" id="about">
+    <div class="container about-grid">
+      <div class="about-illustration">
+        <div class="about-emoji">🌱</div>
+        <div class="about-ring"></div>
+      </div>
+      <div class="about-copy">
+        <span class="section-kicker">关于我们 / ABOUT</span>
+        <h2>用心整理每一份资料，<br />陪伴孩子快乐学习</h2>
+        <p>小树苗资料库专注于小学阶段优质教辅资料的整理与分享。所有资料均由一线教师和教育爱好者精心筛选，力求内容准确、排版清晰、实用易懂。</p>
+        <div class="feature-list">
+          <div class="feature"><span class="f-icon">✓</span><div><b>精选优质内容</b><small>严格筛选，去粗取精</small></div></div>
+          <div class="feature"><span class="f-icon">✓</span><div><b>分类清晰好找</b><small>按年级科目快速定位</small></div></div>
+          <div class="feature"><span class="f-icon">✓</span><div><b>持续更新维护</b><small>定期补充最新资料</small></div></div>
+          <div class="feature"><span class="f-icon">✓</span><div><b>免费便捷下载</b><small>一键获取，随时打印</small></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 联系我们 ===== -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <div class="contact-banner">
+        <div class="contact-deco c1"></div>
+        <div class="contact-deco c2"></div>
+        <div class="contact-content">
+          <span class="section-kicker">联系我们 / CONTACT</span>
+          <h2>有需要的资料没找到？告诉我们</h2>
+          <p>欢迎留言告诉我们您需要的资料，我们会尽力补充。也欢迎提出宝贵建议！</p>
+          <a href="mailto:hello@example.com" class="btn btn-white">发送邮件给我们 <span>→</span></a>
+          <div class="contact-way">📧 hello@example.com　·　💬 微信公众号：小树苗资料库</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 页脚 ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <div class="brand-name">🌱 小树苗资料库</div>
+        <p>陪伴孩子成长的每一步</p>
+      </div>
+      <div class="footer-links">
+        <a href="#home">首页</a><a href="#library">资料库</a><a href="#about">关于我们</a><a href="#contact">联系我们</a>
+      </div>
+      <p class="copyright">© 2026 小树苗资料库 · 本站资料仅供学习交流使用</p>
+    </div>
+  </footer>
+
+  <!-- 下载提示弹窗 -->
+  <div class="toast" id="toast">
+    <span class="toast-icon">✓</span>
+    <span id="toastText">下载链接已复制</span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
